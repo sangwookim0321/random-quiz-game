@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Quiz Game</title>
+    <title>Random Quiz Game !</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel = "stylesheet" href = "main.css">
     <link rel="icon" href="./logo.png">
@@ -15,7 +15,7 @@
     <div class = "wrapper">
         <div class = "quiz-container">
             <div class = "quiz-head">
-                <h1 class = "quiz-title">랜덤 퀴즈 게임</h1>
+                <h1 class = "quiz-title">Random Quiz Game</h1>
                 <div class = "quiz-score flex">
                     <span id = "correct-score"></span> / <span id = "total-question"></span>
                 </div>
@@ -24,22 +24,38 @@
                 <h2 class = "quiz-question" id = "question"><!--What is the full form of HTTP? --></h2>
                 <ul class = "quiz-options">
                     <!-- <li>1. Hyper text transfer package</li>
-                    <li>2. Hyper text transfer protocol</li>
-                    <li>3. Hyphenation text test program</li>
-                    <li>4. None of the above</li> -->
+                    <     li>2. Hyper text transfer protocol</>
+                    <     li>3. Hyphenation text test program</>
+                    <     li>4. None of the above</> -->
                 </ul>
                 <div id = "result">
                 </div>
             </div>
             <div class = "quiz-foot">
-                <button type = "button" id = "check-answer">확인</button>
-                <button type = "button" id = "play-again">다시하기</button>
+                <button type = "button" id = "check-answer">Check</button>
+                <button type = "button" id = "play-again">Replay</button>
             </div>
         </div>
     </div>
 
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1391664286942212"
+    crossorigin="anonymous"></script>
 
-
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit = "DAN-7e5UhkkAdfmsdSkb"
+    data-ad-width = "160"
+    data-ad-height = "600"></ins>
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
     <script src = "script.js"></script>
+
+    <!-- <div id="google_translate_element">
+    </div>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+	function googleTranslateElementInit(){
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',autoDisplay: true, includedLanguages : 'ko,en,ja'}, 'google_translate_element'
+            );}
+</script> -->
 </body>
 </html>

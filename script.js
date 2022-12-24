@@ -6,8 +6,10 @@ const _result = document.getElementById('result');
 const _correctScore = document.getElementById('correct-score');
 const _totalQuestion = document.getElementById('total-question');
 
-let correctAnswer = "", correctScore = askedCount = 0, totalQuestion = 3;
+let correctAnswer = "", correctScore = askedCount = 0, totalQuestion = 15;
 let question_Count = 1
+
+
 
 // load question from API
 async function loadQuestion(){
@@ -42,7 +44,7 @@ function showQuestion(data){
     optionsList.splice(Math.floor(Math.random() * (incorrectAnswer.length + 1)), 0, correctAnswer);
     // console.log(correctAnswer);
 
-    _question.innerHTML = `${question_Count}.${data.question} <br> <span class = "category"> ${data.category} </span>`;
+    _question.innerHTML = `${question_Count}.${data.question} <br> <span class = "category"> Topic: ${data.category} </span>`;
     _options.innerHTML = `
         ${optionsList.map((option, index) => `
             <li> ${index + 1}. <span>${option}</span> </li>
@@ -70,15 +72,15 @@ function checkAnswer(){
     _checkBtn.disabled = true;
     if(_options.querySelector('.selected')){
         let selectedAnswer = _options.querySelector('.selected span').textContent;
-        if(selectedAnswer == HTMLDecode(correctAnswer)){
+        if(selectedAnswer === HTMLDecode(correctAnswer)){
             correctScore++;
-            _result.innerHTML = `<p><i class = "fas fa-check"></i>정답이에요!</p>`;
+            _result.innerHTML = `<p><i class = "fas fa-check"></i>Correct !</p>`;
         } else {
-            _result.innerHTML = `<p><i class = "fas fa-times"></i>틀렸어요ㅠㅠ</p> <small><b>정답: </b>${correctAnswer}</small>`;
+            _result.innerHTML = `<p><i class = "fas fa-times"></i>Incorrect...</p> <small><b>Correct : </b>${correctAnswer}</small>`;
         }
         checkCount();
     } else {
-        _result.innerHTML = `<p><i class = "fas fa-question"></i>정답을 선택해주세요!</p>`;
+        _result.innerHTML = `<p><i class = "fas fa-question"></i>Please select the correct answer!</p>`;
         _checkBtn.disabled = false;
     }
 }
@@ -100,7 +102,7 @@ function checkCount(){
         }, 5000);
 
 
-        _result.innerHTML += `<p>당신의 점수는 ${correctScore}점 입니다!</p>`;
+        _result.innerHTML += `<p>Your score is ${correctScore}.</p>`;
         _playAgainBtn.style.display = "block";
         _checkBtn.style.display = "none";
     } else {
